@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('build') {
+        stage('Check Python') {
             steps {
-                echo 'building the app ...'
+                sh 'python3 --version'
             }
         }
-        stage('build 2') {
+        stage('Run Python Script') {
             steps {
-                git 'https://github.com/A-Keshishyan/test_open.git'
+                sh 'python3 test.py'
             }
         }
     }
